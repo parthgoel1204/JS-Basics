@@ -180,3 +180,71 @@ console.log(person1.getFullName());
 
 // Revised about window object it is there in the browser alsways 
 // Nodelist is not an array but all array functionalities work on it.
+
+
+// object literals
+
+let user = {
+    name: 'Parth',
+    email: 'parth@abc.com',
+    age: 45,
+    code: 'heavy coding',
+    // method
+    login: function(){
+        console.log("logged IN!");
+    },
+    blogs: [ {
+        title: 'Why mac & cheese', likes: 30
+    },
+    {
+        title: '10 things to make with marmite', likes: 50
+    }],
+    logBlogs(){
+        this.blogs.forEach(blog => {
+            console.log(blog.likes , blog.title);
+        });
+    }
+}
+
+console.log(user);
+console.log(user.code);
+console.log(user.age);
+console.log(user['email']);
+
+user.login();
+
+// "this" keyword in the global context is known as the window object  
+console.log(this);
+
+// When we use an arrow function the value of "this" does not change from the value at was at the point in the code the arrow function is invoked 
+
+// const blogs = [
+//     {
+//         title: 'Why mac & cheese', likes: 30
+//     },
+//     {
+//         title: '10 things to make with marmite', likes: 50
+//     }
+// ]
+
+// console.log(blogs);
+
+user.logBlogs();
+
+// MATH OBJECT 
+
+console.log(Math);
+console.log(Math.PI);
+
+// random numbers
+
+console.log(Math.round(Math.random() * 100));
+
+// Primitive types are stored on the stack and reference types are stored on the heap 
+// When we store object in heap it adds a pointer to that object in the stack 
+// When we make a copy of the reference type we only make a copy of the pointer stored on the stack and no copy of the object or anything stored in the heap is created and if we update the object stored in the heap then both the pointers will be pointing ot that updated object unlike the behaviour in primitive types where even on updatng the variable to a new variable the value stored is same as the preious one 
+
+let score1 = 100;
+const score2 = score1;
+score1 = 200;
+// in the above scenario we have score2 = 100 stored in the stack and even after updating score1 later on score2 still remains the same 
