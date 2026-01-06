@@ -248,3 +248,62 @@ let score1 = 100;
 const score2 = score1;
 score1 = 200;
 // in the above scenario we have score2 = 100 stored in the stack and even after updating score1 later on score2 still remains the same 
+
+// map filter reduce are Higher Order Functions
+// Map is used to transform the array 
+
+const arr = [1,2,3,4,5];
+
+// transformation logic 
+const double = (x) => {
+    return x*2;
+}
+
+function binary(x){
+    return x.toString(2);
+}
+const output = arr.map(double);
+
+console.log(output);
+
+const output2 = arr.map(binary);
+console.log(output2);
+
+// filter function is used to filter the values inside an array
+function checkOdd(x){
+ return x%2;
+};
+
+const output3 = arr.filter(checkOdd);
+console.log(output3);
+
+// Reduce is a function where you have to take all the elements of the array and come with a single element out of them as your result 
+const answer = arr.reduce(function (acc,curr){
+    acc += curr;
+    return acc;
+},0)
+console.log(answer);
+
+const answer1 = arr.reduce(function(acc,curr){
+    if(curr > acc){
+        acc = curr;
+    }
+    return acc;
+},0);
+
+console.log(answer1);
+
+const users = [
+    {firstname : "ak" , lastname: "bhai" , age: 34},
+    {firstname : "bk" , lastname: "bhaiya" , age: 24},
+    {firstname : "ck" , lastname: "bhaiya" , age: 29},
+    {firstname : "dk" , lastname: "bhaiya" , age: 54}
+]
+const ans = users.reduce(function(acc,curr){
+    if(curr.age < 30){
+        acc.push(curr.firstname);
+    }
+    return acc;
+},[])
+
+console.log(ans);
