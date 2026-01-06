@@ -307,3 +307,11 @@ const ans = users.reduce(function(acc,curr){
 },[])
 
 console.log(ans);
+
+// Hoisting in JS
+
+// it can be defined as the phenomenon by which the functions and variables can be accessed in the js even before we have initialised them ,  without getting any error
+
+// even before the execution of the first line memory is allocated to the variables and the functions 
+
+// when we write arrow function so it behaves like a variable i.e., it will assign undefine to the function and not assign the whole function as it was doing at the time of normal function
