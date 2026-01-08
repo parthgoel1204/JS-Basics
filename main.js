@@ -315,3 +315,95 @@ console.log(ans);
 // even before the execution of the first line memory is allocated to the variables and the functions 
 
 // when we write arrow function so it behaves like a variable i.e., it will assign undefine to the function and not assign the whole function as it was doing at the time of normal function
+
+// Promises provide a more elegant way to handle asynchronous data 
+
+// Callbacks
+const posts =[
+    { title : 'Post 1' , description : 'This is post one !'},
+    { title : 'Post 2' , description : 'This is post two !'}
+];
+
+function getPosts(){
+    setTimeout(()=> {
+        let output = '';
+        posts.forEach( (post,index) => {
+            output += `<li>${post.title}</li>`;
+        });
+        document.body.innerHTML = output;
+    },1000)
+}
+
+// function createPost(post){
+//     setTimeout( () => {
+//         posts.push(post);
+//     },2000);
+// }
+// getPosts();
+
+
+// Now we can clearly see that DOM is already painted and nothing can be done done to create new posts after getting all the posts so here only ASYNCHRONOUS Programming came into play
+
+//  we can add a callback to the createPost function 
+// function createPost(post , callback){
+//     setTimeout( () => {
+//         posts.push(post);
+//         callback();
+//     },2000);
+// }
+
+// createPost( {title: 'Post 3' , description : 'This is post three'} , getPosts);
+
+// Promises 
+function createPost(post){
+    return new Promise( (resolve,reject) => {
+        setTimeout( () => {
+            posts.push(post);
+            const error  = false;
+            if(!error){
+                resolve();
+            }
+            else{
+                reject('Error : Something Went Wrong !')
+            }
+        },2000);
+    })
+}
+
+
+// createPost({title: 'Post 3' , description : 'This is post three'})
+// .then(getPosts)
+// .catch(err => console.log(err));
+
+// Promise ALL
+
+const promise1 = Promise.resolve('Hello');
+const promise2 = 10;
+const promise3 = new Promise(  (resolve , reject) => 
+setTimeout( resolve , 2000 , 'GoodBye')
+);
+const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
+
+Promise.all([promise1 , promise2 , promise3 , promise4])
+.then( values => console.log(values));
+
+// Async / Await 
+
+async function init() {
+    await createPost({title: 'Post 3' , description : 'This is post three'});
+
+    getPosts();
+}
+
+init();
+
+// Async Await with Fetch 
+async function fetchData() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data  =  await response.json();
+    console.log(data);
+}
+
+fetchData()
+
+// Async await is a much cleaner way of dealing with promises 
