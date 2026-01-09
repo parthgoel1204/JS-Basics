@@ -407,3 +407,22 @@ async function fetchData() {
 fetchData()
 
 // Async await is a much cleaner way of dealing with promises 
+
+// Object Manipulation
+const myObject2 = {
+    a: 'parth',
+    b: 34,
+    c: true
+};
+
+// Object.keys(myObject2).forEach( (i) => {
+//     // console.log(i);
+//     console.log(myObject2[i]);
+// });
+
+const value  = Object.values(myObject2);
+console.log(value);  //returns an array of values present in the object 
+
+const entry = Object.entries(myObject2);
+console.log(entry); // returns an array of array from the object 
+
