@@ -44,3 +44,17 @@ console.log(this.a);
 
 // above written both statements logs the same output as in global space JS engine knows that weare referring to window object 
 // So, SHORTEST PROGRAM in the JS is an empty file.
+
+// Everything in JavaScript happens inside an "execution context".
+// Execution context is created in 2 phases 
+// 1. memory creation phase 
+// 2. code execution phase
+// When a function is invoked a whole new execution context is created specifically for that function 
+// JS Engine manages everything like creation of execution context , phases and deletion beautifully by its "CALL STACK".
+// CALL STACK maintains the order of execution of execution contexts.
+/* Other names of call stack are as follows :
+1. Execution Context Stack
+2. Program Stack
+3. Control Stack
+4. Machine Stack
+5. Runtime Stack */
