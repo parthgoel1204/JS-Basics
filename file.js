@@ -58,3 +58,17 @@ console.log(this.a);
 3. Control Stack
 4. Machine Stack
 5. Runtime Stack */
+
+// Undefined is like a special placeholder for the variables to get them placed in the memory.
+// This placeholder is kept for the time being until the variable is assigned some other value.
+// JavaScript is loosely typed language i.e., it does not attaches its variables to any specific datatype.
+
+var a;
+console.log(a);
+a = 10;
+console.log(a);
+a = "hello";
+console.log(a);
+// Loosely Typed Language are also known as "Weakly Typed Language"
+
+// Not Defined is when a variable is not declared in the program.
