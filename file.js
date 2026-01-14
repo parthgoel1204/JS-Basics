@@ -83,3 +83,12 @@ a();
 // "Lexical Environment" is the local memory along with the reference to the lexical environment of its parent.
 // At the global level this reference to lexical environment of parents points to "NULL".
 // The chain of lexical environments is called the "SCOPE CHAIN" and it defines whether a variable or a function is presnt inside the scope or not.
+
+let act = 10;
+
+// when we declare a variable using var memory was allocated and it was allocated to global object but in case of "let" after the memory allocation it was allocated to "script" i.e., in case of "let & const" these are stored in adifferent memory space than the "var". Moreover we are not able to access this memory space of "let & const" before we have put some value in them.
+
+// "TEMPORAL DEAD ZONE" is the time since when the let variable was hoisted and till it is initialised some value .
+// Whenever we try to access a variable inside the temporal dead zone it leads to the "REFERENCE ERROR"
+
+// ALso variables declared through let & const can't be accessed through window object as they are in a separate memory space.
