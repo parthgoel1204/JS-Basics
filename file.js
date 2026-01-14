@@ -72,3 +72,14 @@ console.log(a);
 // Loosely Typed Language are also known as "Weakly Typed Language"
 
 // Not Defined is when a variable is not declared in the program.
+
+function a(){
+    console.log(b);
+}
+var b = 10;
+a();
+
+// ON calling above function logs b as 10 because it can access b outside its local scope because of its "global scope".
+// "Lexical Environment" is the local memory along with the reference to the lexical environment of its parent.
+// At the global level this reference to lexical environment of parents points to "NULL".
+// The chain of lexical environments is called the "SCOPE CHAIN" and it defines whether a variable or a function is presnt inside the scope or not.
