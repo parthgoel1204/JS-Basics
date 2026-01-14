@@ -92,3 +92,24 @@ let act = 10;
 // Whenever we try to access a variable inside the temporal dead zone it leads to the "REFERENCE ERROR"
 
 // ALso variables declared through let & const can't be accessed through window object as they are in a separate memory space.
+
+// "{}" these curlies are known as "BLOCK". Block is also known as "COMPOUND STATEMENT".
+// Block can be used when JS expects a single statementso it groups multiple statements and make them act as a single statement.
+
+// "BLOCK SCOPE" is defines as all the variables & functions that we can access inside the block.
+// "Let & const" are block scoped.
+
+// Shadowing in JS refers to the following statements
+var a = 100;
+{
+    var a = 10;
+    console.log(a);
+}
+
+// "a" in block cope shadows the "a = 100". Outside the block it will again log a as 100.
+
+// let a = 10;
+// {
+//     var a = 20;
+// }
+// the above statements lead to illegal shadowing.
